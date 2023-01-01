@@ -1,4 +1,17 @@
+.send_page_back {
+    background-image: url(../lib/KakaoTalk_20230101_142900387.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    background-color: black;
+}
+
 .send_top_menu {
+    /* color: white; */
+    /*  */
     display: grid;
     grid-template-columns: 10% 60% 30%;
     margin-top: 1.5rem;
@@ -7,6 +20,8 @@
 }
 
 .send_top_menu>img {
+    /* background-color: white; */
+    /*  */
     margin-left: 1rem;
     width: 50%;
 }
@@ -127,6 +142,8 @@
 /*  */
 
 .send_option_button {
+    /* background-color: white; */
+    /*  */
     position: absolute;
     top: 26rem;
     left: 2rem;

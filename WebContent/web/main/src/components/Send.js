@@ -212,13 +212,9 @@ function Send() {
                             }}></img>
                             <div></div>
                             <span onClick={() => {
-                                if (text === '') {
-                                    alert('편지가 비어 있습니다. 당신의 소중한 이야기를 들려주세요.');
-                                } else {
-                                    filter();
-                                    dispatch({ type: 'CHANGE_ISPRELETTERBOX', data: !isPreLetterBox });
-                                    dispatch({ type: 'CHANGE_ISSENDINGPAGE', data: !isSendingPage });
-                                };
+                                filter();
+                                dispatch({ type: 'CHANGE_ISPRELETTERBOX', data: !isPreLetterBox });
+                                dispatch({ type: 'CHANGE_ISSENDINGPAGE', data: !isSendingPage });
                             }}>보내기</span>
                         </div>
                         <div className='pre_letter_title_outContainer'>
@@ -913,6 +909,13 @@ function Send() {
 
     return (
         <React.Fragment>
+            {/* <section className='section_shootingStar'>
+                <span className='shootingStar'></span>
+                <span className='shootingStar'></span>
+                <span className='shootingStar'></span>
+                <span className='shootingStar'></span>
+            </section> */}
+            {/* <div className='send_page_back'></div> */}
             <SendingEnd></SendingEnd>
             {isSendingPage ? <SendingPage></SendingPage> : ''}
             <PreLetter></PreLetter>
@@ -925,8 +928,12 @@ function Send() {
                 }}></img>
                 <h3>To. {userID}</h3>
                 <span onClick={() => {
-                    dispatch({ type: 'CHANGE_ISPRELETTERBOX', data: !isPreLetterBox });
-                    inactiveLetterOption();
+                    if (text === '') {
+                        alert('편지가 비어 있습니다. 당신의 소중한 이야기를 들려주세요.');
+                    } else {
+                        dispatch({ type: 'CHANGE_ISPRELETTERBOX', data: !isPreLetterBox });
+                        inactiveLetterOption();
+                    };
                 }}>완성하기</span>
             </div>
             <div id="send_textarea">
